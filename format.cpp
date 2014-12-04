@@ -45,7 +45,7 @@ int main(){
 	fs.dir[0].start = 0;
 	fs.dir[0].size = 530;
 	// add a file to the directory
-	strcpy(fs.data[0],(unsigned char*)"frankfranfrankfrank");
+	strcpy((char*)fs.data[0],"frankfranfrankfrank");
 
 
 	
