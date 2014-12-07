@@ -39,18 +39,12 @@ int main(){
 	FS fs;
 	int fd;
 	int status;
-	
 
 	fd = open("Floppy.mfs", O_RDONLY, 0666);
 
 	read(fd,&fs,sizeof(FS));	
-	
 	printf("%s",fs.data[0]);
-	
-	
-	
 	close(fd);
-	
 
 return 0;
 }

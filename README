@@ -1,0 +1,19 @@
+FAT Filesystem Assignment 4 for CS3790
+Author: Frankie Gauthier
+
+COMPILE
+--------
+
+-to compile this program type "make cat dir delete format" in the CS3790Assign4 directory
+
+type 	./format to create a filesystem file
+	
+	./dir to view the filesystem, which is initially created with one file called frank
+	
+	./cat frank will show you the contents of the frank file
+
+	./delete will delete the frank file from the filesystem directory and the FAT
+
+
+*I wasn't able to get to the copy command and my other commands work in a limited way, I got stuck trying to have my delete command overwrite the Floppy.mfs properly. If I opened it with O_RDWR and wrote back to the file it would have no effect. When I used my ./dir after so I am using it with O_RDWR and O_TRUNC but when I do that my fat and directory values seem to be wiped, but at least if you use ./dir after the directory entry dissappears.
+	

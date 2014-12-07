@@ -2,6 +2,7 @@ cc = g++
 obj = format.o
 bin = format
 
+
 $(bin):	$(obj)
 	$(cc) $(obj) -o $(bin)
 
@@ -9,4 +10,4 @@ $(bin):	$(obj)
 	$(cc) -c $<
 
 clean:
-	rm *.o $(bin) Floppy.mfs
+	rm *.o $(bin) Floppy.mfs cat dir delete

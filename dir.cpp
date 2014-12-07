@@ -43,9 +43,11 @@ int main(){
 	fd = open("Floppy.mfs", O_RDONLY, 0666);
 
 	read(fd,&fs,sizeof(FS));
-
-	printf("%s,  %d\n",fs.dir[0].name,fs.dir[0].size);
+	printf("File\t\tSize\n------------------------\n");
 	
+	int i = 0;
+	while(fs.dir[i].start != -1) {printf("%s,\t\t%d\t\t%d\n",fs.dir[i].name,fs.dir[i].size,fs.dir[i].start);i++;}
+		
 	close(fd);
 	
 

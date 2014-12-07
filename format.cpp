@@ -40,12 +40,17 @@ int main(){
 	int fd;
 	unsigned long int status;
 	
+
+	// init dir start locations to -1
+	for(int i = 0;i<DIRSIZE;i++){
+		fs.dir[i].start = -1;	
+	}
 	
 	strcpy(fs.dir[0].name, "frank");
 	fs.dir[0].start = 0;
 	fs.dir[0].size = 530;
 	// add a file to the directory
-	strcpy((char*)fs.data[0],"frankfranfrankfrank");
+	strcpy((char*)fs.data[0],"This is the data inside the frank file");
 
 
 	
@@ -56,6 +61,8 @@ int main(){
 	//set the last block to signal the end of the free space
 	
 	
+	fs.fat[0] = 1;
+	fs.fat[1] = -1;	
 
 
 	fd = open("Floppy.mfs", O_CREAT | O_WRONLY, 0666);
